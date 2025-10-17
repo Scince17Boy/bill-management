@@ -1,0 +1,563 @@
+/* General Body & Root Variables (New Premium Theme) */
+:root {
+    --primary-color: #4a69bd;
+    --secondary-color: #6a89cc;
+    --accent-color: #007bff;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f0f2f5;
+    --card-bg: #ffffff;
+    --border-light: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Primary font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Login Page Specific Styles (Mostly unchanged, but uses variables) */
+.login-container-wrapper {
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* .profile-pic-container এবং .profile-pic এর CSS এখানে আর দরকার নেই কারণ HTML থেকে এটি সরিয়ে দেওয়া হয়েছে */
+
+.app-title {
+    font-family: 'Montserrat', sans-serif; /* Slightly different font for title */
+    font-size: 2.5em; /* Increased size for impact */
+    font-weight: 700;
+    margin-bottom: 40px; /* More space */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    color: var(--text-light);
+    letter-spacing: 0.5px; /* Subtle spacing */
+}
+
+.login-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+.login-card h2 {
+    font-size: 1.8em; /* Slightly larger */
+    font-weight: 600;
+    margin-bottom: 30px; /* More space */
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 25px; /* More space */
+}
+
+.input-group input {
+    width: calc(100% - 24px); /* Adjusted for padding */
+    padding: 16px 12px; /* Increased padding */
+    border: none;
+    border-radius: 12px; /* More rounded */
+    background-color: rgba(255, 255, 255, 0.25); /* Lighter background */
+    color: var(--text-light);
+    font-size: 1.1em;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-group input:focus {
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); /* Focus ring */
+}
+
+.login-button {
+    width: 100%;
+    padding: 18px; /* Larger button */
+    border: none;
+    border-radius: 12px;
+    background-color: var(--accent-color); /* Bright blue */
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); /* Stronger shadow */
+    letter-spacing: 0.5px;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* More space */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px; /* Space from login card */
+}
+
+.action-button {
+    width: 100%;
+    padding: 20px; /* Larger padding */
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1.15em;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 18px var(--shadow-medium);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-button .icon {
+    font-size: 1.6em; /* Larger icon */
+    margin-right: 18px; /* More space */
+    color: #ffd700; /* Gold color */
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2)); /* Subtle icon shadow */
+}
+
+.action-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px); /* More pronounced lift */
+    box-shadow: 0 7px 20px var(--shadow-medium);
+}
+
+
+/* Main Application Page - Premium Theme */
+#mainPage {
+    background-color: var(--bg-light); /* Light grey background */
+    padding: 30px; /* More padding */
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px; /* Wider for main content */
+    border-radius: 12px;
+    box-shadow: 0 8px 30px var(--shadow-medium); /* Stronger shadow */
+    color: var(--text-dark); /* Darker text for main page content */
+    display: flex; /* Use flexbox for layout control */
+    flex-direction: column;
+    gap: 25px; /* Space between sections */
+}
+
+.header-main-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-light); /* Subtle separator */
+    margin-bottom: 15px;
+}
+
+.header-main-page h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+#logoutBtn {
+    background: var(--error-color); /* Red color for logout */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px; /* More padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.0em;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+}
+
+#logoutBtn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Form takes 2 parts, summary 1 part */
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px; /* Generous padding */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--shadow-light); /* Soft shadow */
+    border: 1px solid var(--border-light);
+}
+
+.card h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 25px; /* More space */
+    display: flex;
+    align-items: center;
+}
+
+.icon-title {
+    color: var(--accent-color);
+    margin-right: 12px;
+    font-size: 1.2em;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-row input {
+    flex-grow: 1; /* Inputs take equal space */
+}
+
+input, select, button {
+    padding: 12px; /* Consistent padding */
+    margin: 0; /* Remove default margins from elements */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1.0em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.form-container input[type="date"],
+.form-container input[type="number"],
+.form-container input[type="text"],
+.form-container select {
+    width: 100%; /* Take full width within their container/row */
+}
+
+.form-container select {
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23666' d='M9.293 12.95l.707.707L15 9.707V15a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v5.293l-4-4a1 1 0 0 0-1.414 0l-4 4a1 1 0 0 0 0 1.414l.707.707L10 10.414V14a1 1 0 0 0 1 1z'/%3E%3C/svg%3E"); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    padding-right: 30px; /* Space for the custom arrow */
+    margin-bottom: 15px; /* Space after select */
+}
+
+
+.form-container button {
+    background-color: var(--success-color); /* Green for Add Bill button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.form-container button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+.search-box {
+    margin-top: 20px;
+}
+.search-box input {
+    width: calc(100% - 24px); /* Adjusted for padding */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    font-size: 1em;
+}
+
+/* Table Specific Styles */
+.table-container {
+    overflow-x: auto; /* This is key for horizontal scrolling on small screens */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+}
+
+table {
+    width: 100%;
+    min-width: 600px; /* Ensure table has a minimum width, forcing scroll if needed */
+    border-collapse: separate; /* Use separate for rounded corners on cells */
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 8px; /* Apply border-radius to table */
+    overflow: hidden; /* Hide overflowing content */
+}
+th, td {
+    padding: 15px; /* More padding */
+    border-bottom: 1px solid var(--border-light);
+    text-align: left;
+    color: var(--text-dark);
+    white-space: nowrap; /* Prevent text from wrapping inside cells */
+}
+th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* Apply border-radius to first/last th for rounded table corners */
+th:first-child { border-top-left-radius: 8px; }
+th:last-child { border-top-right-radius: 8px; }
+
+tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.2s ease;
+}
+td:first-child { border-left: 1px solid var(--border-light); }
+td:last-child { border-right: 1px solid var(--border-light); }
+tbody tr:last-child td { border-bottom: none; } /* Remove bottom border for last row */
+tbody tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+tbody tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+
+td button {
+    background-color: var(--error-color); /* Red for delete button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px; /* Adjusted padding */
+    cursor: pointer;
+    margin: 0; /* Remove extra margin */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+}
+td button:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.paid {
+    color: var(--success-color); /* Green for paid status */
+    font-weight: bold;
+    background-color: #e6ffe6; /* Light green background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.unpaid {
+    color: var(--error-color); /* Red for unpaid status */
+    font-weight: bold;
+    background-color: #ffe6e6; /* Light red background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.summary-container p {
+    font-size: 1.2em; /* Larger text */
+    margin-bottom: 15px; /* More space */
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.summary-container span {
+    font-weight: 700; /* Bolder */
+    color: var(--accent-color); /* Accent color for values */
+    font-size: 1.1em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+    #mainPage {
+        padding: 20px;
+        gap: 20px;
+    }
+    .card {
+        padding: 25px;
+    }
+    .header-main-page h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container-wrapper {
+        padding: 15px;
+    }
+    .app-title {
+        font-size: 2em;
+    }
+    .login-card {
+        padding: 25px;
+    }
+    .login-card h2 {
+        font-size: 1.6em;
+    }
+    .input-group input,
+    .login-button,
+    .action-button {
+        font-size: 1em;
+        padding: 14px;
+    }
+    .action-button {
+        padding: 18px;
+    }
+    .action-button .icon {
+        font-size: 1.4em;
+        margin-right: 15px;
+    }
+
+    /* Main Page Responsive */
+    #mainPage {
+        padding: 15px;
+    }
+    .header-main-page {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .header-main-page h1 {
+        font-size: 1.6em;
+        text-align: center;
+        width: 100%;
+    }
+    #logoutBtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .form-container h2, .summary-container h2, .table-container h2 {
+        font-size: 1.4em;
+    }
+    .input-row {
+        flex-direction: column; /* Stack inputs in rows */
+        gap: 10px;
+    }
+    input, select, button {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    .form-container select {
+        margin-bottom: 10px;
+    }
+
+    th, td {
+        padding: 8px; /* Slightly reduce padding in table cells */
+        font-size: 0.85em; /* Reduce font size in table cells */
+    }
+    td button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        white-space: nowrap; /* Ensure button text doesn't wrap */
+    }
+    .paid, .unpaid {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.8em;
+    }
+    .login-card {
+        padding: 20px;
+    }
+    .login-card h2 {
+        font-size: 1.3em;
+    }
+    .input-group input,
+    .login-button,
+    .action-button {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+    .action-button {
+        padding: 15px;
+    }
+    .action-button .icon {
+        font-size: 1.3em;
+    }
+
+    #mainPage {
+        padding: 10px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .form-container h2, .summary-container h2, .table-container h2 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    .summary-container p {
+        font-size: 1em;
+    }
+
+    /* Further adjustments for very small screens */
+    table {
+        min-width: 500px; /* Further reduce min-width if needed for extremely small screens */
+    }
+    th, td {
+        padding: 6px; /* Even smaller padding */
+        font-size: 0.8em; /* Even smaller font size */
+    }
+    td button {
+        padding: 5px 8px;
+        font-size: 0.75em;
+    }
+}
+
