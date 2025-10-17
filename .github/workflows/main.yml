@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institute Bill Management</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container-wrapper" id="loginPage">
+    
+    <h1 class="app-title">Institute Bill Management</h1>
+
+    <div class="login-card">
+      <h2>Admin Login</h2>
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Username">
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password">
+      </div>
+      <button onclick="login()" class="login-button">Login</button>
+    </div>
+
+    <div class="action-buttons">
+      <button class="action-button">
+          <i class="fas fa-graduation-cap icon"></i> Add Student Bill
+      </button>
+      <button class="action-button">
+          <i class="fas fa-receipt icon"></i> Bill Records
+      </button>
+    </div>
+  </div>
+
+  <div id="mainPage" style="display: none;">
+    <div class="header-main-page">
+        <h1>Institute Bill Management</h1>
+        <button id="logoutBtn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="form-container card">
+            <h2><i class="fas fa-plus-circle icon-title"></i> Add Student Bill</h2>
+            <div class="input-row">
+                <input type="text" id="studentName" placeholder="Student Name">
+                <select id="course">
+                    <option value="">Select Course</option>
+                    <option value="CITA">CITA</option>
+                    <option value="DITA">DITA</option>
+                    <option value="CFA">CFA</option>
+                    <option value="DFA">DFA</option>
+                    <option value="CCA">CCA</option>
+                    <option value="DCA">DCA</option>
+                    <option value="COM">COM</option>
+                    <option value="DOM">DOM</option>
+                    <option value="BASIC">BASIC</option>
+                </select>
+            </div>
+            <div class="input-row">
+                <input type="date" id="month">
+                <input type="number" id="amount" placeholder="Amount">
+            </div>
+            <select id="status">
+                <option value="Paid">Paid</option>
+                <option value="Unpaid">Unpaid</option>
+            </select>
+            <button onclick="addBill()">Add Bill</button>
+        </div>
+
+        <div class="summary-container card">
+            <h2><i class="fas fa-chart-bar icon-title"></i> Monthly Summary</h2>
+            <p>Total Bills: <span id="totalBills">0</span></p>
+            <p>Total Paid: ₹<span id="totalPaid">0.00</span></p>
+            <p>Total Unpaid: ₹<span id="totalUnpaid">0.00</span></p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by name or date..." onkeyup="renderBills()">
+            </div>
+        </div>
+    </div>
+    
+    <div class="table-container card">
+      <h2><i class="fas fa-list-alt icon-title"></i> Bill Records</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="billTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
